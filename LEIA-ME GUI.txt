@@ -1,0 +1,44 @@
+FFX Encoder GUI
+Versao inicial de testes 1.0
+
+Esta versao grafica foi criada em instalacao separada para testes, sem substituir a versao console atual.
+
+Instalacao de teste:
+C:\FFX Encoder GUI
+
+Nesta primeira etapa, a interface grafica foca no Editor de Faixas:
+- Selecionar pasta de videos.
+- Selecionar um video.
+- Ver faixas de video, audio, legenda e anexos.
+- Marcar faixas para manter ou remover.
+- Mover faixas para cima/baixo dentro do mesmo tipo.
+- Alterar idioma de audio/legenda.
+- Definir default e forced.
+- Remover imagens em faixas de video.
+- Aplicar tudo em um unico remux sem recode.
+- Gerar relatorio de faixas.
+- Extrair audios.
+- Extrair legendas.
+- Juntar legenda externa com mesmo nome do video.
+- Juntar audio externo com mesmo nome do video.
+- Remover capas/imagens embutidas.
+- Limpar metadados textuais.
+- Aplicar cover.jpg, cover.jpeg ou cover.png local.
+- Abrir pelo menu de contexto "Abrir com FFX Encoder GUI" ja carregando a pasta clicada.
+- Processar tarefas pesadas em segundo plano com barra animada para evitar sensacao de travamento.
+- Interface reorganizada em abas de acoes rapidas.
+- Conversao usa seletores na propria aba, sem janela extra.
+- Converter em H.265, H.264 ou AV1.
+- Opcao de resolucao original ou 1080p.
+- Filtros opcionais: Nenhum, Deinterlace, Denoise e Remaster.
+- Correcao para manter uso de encoder GPU quando detectado.
+- Menu superior com Arquivo, Configuracoes e Ajuda.
+- Carregar pasta ou arquivo pelo menu Arquivo.
+- Tema claro e tema escuro.
+- Configuracao de token TMDb pela interface.
+- Icone proprio na janela.
+- Tema escuro ajustado com paleta menos contrastada.
+- Busca e aplicacao de capa pelo TMDb na propria janela.
+- Processos em lote exibem o arquivo atual no status e no log.
+
+A versao console em C:\FFX Encoder continua independente.

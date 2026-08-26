@@ -1,0 +1,84 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
+2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj
+3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >> endobj
+4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
+5 0 obj << /Length 1990 >> stream
+BT
+/F1 18 Tf
+50 790 Td
+(FFX Encoder GUI - Ajuda e Problemas Frequentes) Tj
+/F1 11 Tf
+0 -18 Td
+() Tj
+0 -18 Td
+(1. Os botoes TMDb estao bloqueados) Tj
+0 -18 Td
+(Abra Configuracoes > Chave TMDb e informe o token de leitura da API TMDb.) Tj
+0 -18 Td
+(Depois de salvar a chave, os botoes de capa, metadados e Modo Inteligente ficam disponiveis.) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(2. Conversao para MP4 ignorou alguma legenda ou capa) Tj
+0 -18 Td
+(O container MP4 aceita menos tipos de faixa que MKV. Legendas de imagem, anexos e capas podem ser ignorados.) Tj
+0 -18 Td
+(Quando quiser preservar o maximo de faixas, prefira MKV.) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(3. Audio ou legenda nao aparece depois de juntar) Tj
+0 -18 Td
+(Confirme se o idioma e o atraso foram escolhidos corretamente. Para legendas SRT, prefira arquivos em UTF-8.) Tj
+0 -18 Td
+(Se um player nao exibir, teste tambem em outro player para confirmar compatibilidade.) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(4. Processo parece demorar) Tj
+0 -18 Td
+(Conversao, remaster, denoise e upscale podem demorar bastante. A barra indica que o app continua trabalhando.) Tj
+0 -18 Td
+(Se percebeu que escolheu algo errado, use Cancelar processo.) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(5. Botao Abrir saida) Tj
+0 -18 Td
+(Ele fica bloqueado ate um processo gerar uma pasta de saida. Depois disso, abre a ultima pasta produzida.) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(6. Cache de capas) Tj
+0 -18 Td
+(As capas salvas ficam na pasta Capas dentro da instalacao. Use Buscar do cache para reutilizar capas ja baixadas.) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(7. Modo Inteligente) Tj
+0 -18 Td
+(Foi pensado para um filme por pasta. Primeiro selecione o filme correto no painel Metadados e capas.) Tj
+0 -18 Td
+(A rotina junta legenda externa quando existir, preserva PT+EN e legenda PT, e aplica capa/metadados TMDb.) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(8. Recomendacao geral) Tj
+0 -18 Td
+(Para arquivos importantes, teste primeiro com uma copia ou poucos episodios antes de processar uma temporada inteira.) Tj
+ET
+endstream endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000247 00000 n 
+0000000317 00000 n 
+trailer << /Size 6 /Root 1 0 R >>
+startxref
+2359
+%%EOF

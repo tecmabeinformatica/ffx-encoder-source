@@ -1,0 +1,19 @@
+FFX Encoder 3.0
+BY DjManeca
+
+O FFX Encoder é uma ferramenta para facilitar tarefas repetitivas com arquivos de vídeo, usando FFmpeg como motor principal.
+
+Ele reúne funções de conversão, organização de áudio e legendas, capas, metadados, relatórios de faixas e um Modo Inteligente para filmes. A ideia é reduzir etapas manuais e deixar os arquivos finais mais organizados, preservando os originais.
+
+Principais recursos:
+- Converter vídeos para H.265, H.264 ou AV1.
+- Fazer upscale para 1080p.
+- Manter, extrair, juntar ou remover faixas de áudio e legenda.
+- Aplicar, buscar, reutilizar ou remover capas.
+- Limpar e inserir metadados de filmes usando TMDb.
+- Gerar relatório de faixas de áudio e legenda.
+- Usar o Modo Inteligente (Filmes) para automatizar uma rotina completa.
+
+Arquivos originais não são substituídos. Os resultados são salvos em pastas de saída criadas pelo próprio programa.
+
+Para máxima compatibilidade com várias faixas, legendas, capas e metadados, o formato MKV continua sendo o mais recomendado.

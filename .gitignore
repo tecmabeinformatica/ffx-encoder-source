@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# PyInstaller e artefatos de compilacao
+build/
+dist/
+release/
+InstallerBuild/
+InstallerBuildGUI/build/
+InstallerBuildGUI/dist/
+InstallerBuildGUI/*.zip
+*.exe
+
+# FFmpeg distribuido separadamente
+bin/*.exe
+
+# Arquivos gerados e historicos de empacotamento
+Documentos Corrigidos/
+InstallerBuildGUI/*.spec
+FFX Encoder GUI * Instalador.spec
+!FFX Encoder GUI 2.0 Final Instalador.spec
+
+# Configuracoes locais e credenciais
+ffx.dat
+ffx.config
+tmdb.ini
+*.env
+.env*
+config.local.*
+
+# Dados e caches do usuario
+Capas/
+Saida/
+Temp/
+temp/
+*.log
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
