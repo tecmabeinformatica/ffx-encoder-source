@@ -6,6 +6,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .venv/
+.venv-build/
 venv/
 
 # PyInstaller e artefatos de compilacao
@@ -48,4 +49,3 @@ Thumbs.db
 desktop.ini
 .idea/
 .vscode/
-

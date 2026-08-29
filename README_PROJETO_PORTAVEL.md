@@ -6,8 +6,9 @@ Este pacote foi separado para permitir manutenção futura do FFX Encoder GUI fo
 
 - `gui_main.py`: interface gráfica principal do FFX Encoder GUI.
 - `ffx_encoder/`: módulos auxiliares do projeto.
-- `InstallerBuildGUI/installer_gui.py`: instalador empacotado em Python.
+- `installer.iss`: instalador gráfico moderno compilado pelo Inno Setup 6.
 - `FFX Encoder GUI.spec`: configuração do PyInstaller para gerar o aplicativo principal.
+- `build_installer.ps1`: automatiza documentos, aplicativo e instalador final.
 - `generate_final_docs.py`: gera os PDFs `Leia-me` e `Ajuda`.
 - `bin/`: `ffmpeg.exe` e `ffprobe.exe` usados pelo app quando empacotado.
 - `Documentos Corrigidos/`: PDFs corrigidos com acentuação normal.
@@ -15,7 +16,7 @@ Este pacote foi separado para permitir manutenção futura do FFX Encoder GUI fo
 
 ## Requisitos para editar e compilar
 
-Instale Python 3.14 ou superior e depois:
+Instale Python 3.14 ou superior, [Inno Setup 6](https://jrsoftware.org/isdl.php) e depois:
 
 ```powershell
 python -m pip install -r requirements-build.txt
@@ -45,27 +46,18 @@ O resultado principal será criado em:
 dist\FFX Encoder GUI\
 ```
 
-## Atualizar o payload do instalador
-
-Após compilar o app principal, copie para `dist\FFX Encoder GUI\`:
-
-- `Desinstalar FFX Encoder GUI.bat`
-- `Documentos Corrigidos\FFX Encoder GUI Leia-me.pdf`
-- `Documentos Corrigidos\FFX Encoder GUI Ajuda.pdf`
-- `FFX Encoder GUI Termo de Responsabilidade.pdf`
-- `icone.ico`
-
-Depois recrie:
-
-```text
-InstallerBuildGUI\FFX Encoder GUI Payload.zip
-```
-
 ## Compilar o instalador
 
 ```powershell
-python -m PyInstaller --noconfirm --clean --onefile --console --name "FFX Encoder GUI 2.0 Final Instalador" --icon "icone.ico" --add-data "InstallerBuildGUI\FFX Encoder GUI Payload.zip;." "InstallerBuildGUI\installer_gui.py"
+.\build_installer.ps1
 ```
+
+O script gera os PDFs, compila o aplicativo com PyInstaller e cria o instalador
+gráfico com o Inno Setup 6. O resultado é salvo em `release\`.
+
+O instalador usa interface moderna e não abre uma janela de prompt. Ele também
+cria o desinstalador nativo, oferece atalho na Área de Trabalho e instala o menu
+de contexto opcional. A pasta pessoal `Capas` não é removida na desinstalação.
 
 ## Observações
 
