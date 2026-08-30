@@ -10,7 +10,6 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=[
-        (str(ROOT / 'ffx_encoder'), 'ffx_encoder'),
         (str(ROOT / 'bin' / 'ffmpeg.exe'), 'bin'),
         (str(ROOT / 'bin' / 'ffprobe.exe'), 'bin'),
     ],
