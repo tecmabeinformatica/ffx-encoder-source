@@ -4,9 +4,9 @@ $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $BuildPython = Join-Path $Root ".venv-build\Scripts\python.exe"
 $Python = if (Test-Path -LiteralPath $BuildPython) { $BuildPython } else { "python" }
 $AppName = "FFX Encoder GUI"
-$InstallerName = "FFX Encoder GUI 2.0 Final Instalador"
+$InstallerName = "FFX Encoder GUI 2.1 Instalador"
 $Dist = Join-Path $Root "dist\$AppName"
-$Docs = Join-Path $Root "Documentos Corrigidos"
+$Docs = Join-Path $Root "build\docs"
 $InnoCompiler = Join-Path $env:LOCALAPPDATA "Programs\Inno Setup 6\ISCC.exe"
 
 if (-not (Test-Path -LiteralPath $InnoCompiler)) {

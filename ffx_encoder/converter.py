@@ -4,7 +4,7 @@ import json
 import subprocess
 from pathlib import Path
 
-from .ffmpeg_tools import FfmpegTools, media_duration_seconds, test_encoder
+from .ffmpeg_tools import FfmpegTools, media_duration_seconds, video_encoder_args
 from .media import ensure_dir, list_video_files
 from .runner import run_with_percent
 
@@ -41,33 +41,8 @@ def video_height(tools: FfmpegTools, file_path: Path) -> int:
 
 
 def _codec_args(tools: FfmpegTools, codec: str, cq: str) -> list[str]:
-    if codec == "h264":
-        if test_encoder(tools, "h264_nvenc"):
-            return ["-c:v", "h264_nvenc", "-preset", "p5", "-rc", "vbr", "-cq", cq, "-b:v", "0"]
-        if test_encoder(tools, "h264_qsv"):
-            return ["-c:v", "h264_qsv", "-global_quality", cq]
-        if test_encoder(tools, "h264_amf"):
-            return ["-c:v", "h264_amf", "-cq", cq]
-        return ["-c:v", "libx264", "-crf", cq, "-preset", "medium"]
-
-    if codec == "av1":
-        if test_encoder(tools, "av1_nvenc"):
-            return ["-c:v", "av1_nvenc", "-preset", "p5", "-rc", "vbr", "-cq", cq, "-b:v", "0"]
-        if test_encoder(tools, "av1_qsv"):
-            return ["-c:v", "av1_qsv", "-global_quality", cq]
-        if test_encoder(tools, "av1_amf"):
-            return ["-c:v", "av1_amf", "-cq", cq]
-        if test_encoder(tools, "libsvtav1"):
-            return ["-c:v", "libsvtav1", "-crf", cq, "-preset", "8"]
-        return ["-c:v", "libaom-av1", "-crf", cq, "-b:v", "0", "-cpu-used", "6"]
-
-    if test_encoder(tools, "hevc_nvenc"):
-        return ["-c:v", "hevc_nvenc", "-preset", "p5", "-rc", "vbr", "-cq", cq, "-b:v", "0"]
-    if test_encoder(tools, "hevc_qsv"):
-        return ["-c:v", "hevc_qsv", "-global_quality", cq]
-    if test_encoder(tools, "hevc_amf"):
-        return ["-c:v", "hevc_amf", "-cq", cq]
-    return ["-c:v", "libx265", "-crf", cq, "-preset", "medium"]
+    normalized_codec = "hevc" if codec == "h265" else codec
+    return video_encoder_args(tools, normalized_codec, cq)
 
 
 def _audio_args(audio_mode: str) -> list[str]:

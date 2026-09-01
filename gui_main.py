@@ -12,13 +12,13 @@ from tkinter import filedialog, messagebox, simpledialog, ttk
 
 from ffx_encoder.config import AppConfig
 from ffx_encoder.covers import _cached_cover_path, _detect_cache_query
-from ffx_encoder.ffmpeg_tools import FfmpegTools, detect_encoder_message, locate_ffmpeg
+from ffx_encoder.ffmpeg_tools import FfmpegTools, detect_encoder_message, locate_ffmpeg, video_encoder_args
 from ffx_encoder.media import VIDEO_EXTENSIONS, ensure_dir
 from ffx_encoder.metadata import GLOBAL_METADATA_KEYS, _safe_name
 from ffx_encoder.tmdb import download_poster, search_movies, search_multi, season_details
 
 
-GUI_VERSION = "2.0 Final"
+GUI_VERSION = "2.1"
 MIN_WINDOW_WIDTH = 1600
 MIN_WINDOW_HEIGHT = 980
 DEFAULT_WINDOW_WIDTH = 1600
@@ -4430,21 +4430,8 @@ class TrackEditorApp(tk.Tk):
         return self.quality_from_text(self.quality_var.get())
 
     def video_encoder_args(self, codec: str, quality_text: str | None = None) -> list[str]:
-        if codec == "copy":
-            return ["-c:v", "copy"]
-        encoder_text = self.encoder_message.lower()
         cq = self.quality_from_text(quality_text) if quality_text is not None else self.selected_quality()
-        if codec == "hevc":
-            if "nvenc" in encoder_text:
-                return ["-c:v", "hevc_nvenc", "-preset", "p5", "-rc", "vbr", "-cq", cq, "-b:v", "0"]
-            return ["-c:v", "libx265", "-preset", "medium", "-crf", cq]
-        if codec == "h264":
-            if "nvenc" in encoder_text:
-                return ["-c:v", "h264_nvenc", "-preset", "p5", "-rc", "vbr", "-cq", cq, "-b:v", "0"]
-            return ["-c:v", "libx264", "-preset", "medium", "-crf", cq]
-        if "nvenc" in encoder_text:
-            return ["-c:v", "av1_nvenc", "-preset", "p5", "-rc", "vbr", "-cq", cq, "-b:v", "0"]
-        return ["-c:v", "libsvtav1", "-crf", cq, "-preset", "8"]
+        return video_encoder_args(self.tools, codec, cq)
 
     def selected_container(self) -> str:
         return "mp4" if self.container_var.get().lower() == "mp4" else "mkv"

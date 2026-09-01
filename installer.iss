@@ -1,6 +1,6 @@
 #define MyAppName "FFX Encoder GUI"
-#define MyAppVersion "2.0.0"
-#define MyAppDisplayVersion "2.0 Final"
+#define MyAppVersion "2.1.0"
+#define MyAppDisplayVersion "2.1"
 #define MyAppPublisher "Tecmabe Informática"
 #define MyAppExeName "FFX Encoder GUI.exe"
 
@@ -14,7 +14,7 @@ DefaultDirName=C:\FFX Encoder GUI
 DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 OutputDir=release
-OutputBaseFilename=FFX Encoder GUI 2.0 Final Instalador
+OutputBaseFilename=FFX Encoder GUI 2.1 Instalador
 SetupIconFile=icone.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
 ArchitecturesAllowed=x64compatible

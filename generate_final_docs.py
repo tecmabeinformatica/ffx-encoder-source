@@ -20,8 +20,8 @@ from reportlab.platypus import (
 
 
 ROOT = Path(__file__).resolve().parent
-VERSION = "2.0 Final"
-OUT_DIR = ROOT / "Documentos Corrigidos"
+VERSION = "2.1"
+OUT_DIR = ROOT / "build" / "docs"
 OUT_README = OUT_DIR / "FFX Encoder GUI Leia-me.pdf"
 OUT_HELP = OUT_DIR / "FFX Encoder GUI Ajuda.pdf"
 
